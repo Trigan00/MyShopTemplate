@@ -1,0 +1,28 @@
+.mainNav {
+  height: 40px;
+  background: cornflowerblue;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mainNav a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  height: 100%;
+  color: aliceblue;
+}
+
+.mainNav .CompanyName {
+  text-decoration: none;
+  margin-right: 100px;
+}
+
+/* Specific styles for active links */
+.link-active {
+  background: orange;
+}
