@@ -3,11 +3,16 @@
   display: flex;
   flex-direction: column;
   background-color: antiquewhite;
+  cursor: pointer;
 }
 
 .image {
   width: 200px;
   height: 200px;
+  background-color: aquamarine;
+}
+
+.imageClicked {
   background-color: aquamarine;
 }
 
