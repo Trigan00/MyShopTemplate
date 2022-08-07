@@ -1,0 +1,24 @@
+.Item {
+  margin: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: antiquewhite;
+  cursor: pointer;
+}
+
+.image {
+  width: 200px;
+  height: 200px;
+  background-color: #007acc;
+}
+
+.Name {
+  margin-top: 7px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.Price {
+  text-align: center;
+  font-weight: bold;
+}

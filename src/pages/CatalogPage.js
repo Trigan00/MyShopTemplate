@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import CatalogSection from "../components/catalogSection/CatalogSection";
+import AllProducts from "../components/Products/AllProducts";
 
 import styles from "./Catalog.module.css";
 
 function Catalog() {
   const [isSectionClicked, SetisSectionClicked] = useState(false);
+  const [SectionName, SetSectionNAme] = useState("");
 
   const сatalogSections = [
     { name: "Кофты", id: 0 },
@@ -19,10 +21,11 @@ function Catalog() {
   //либо
   //создать один компонент который будет содеражать все товары и рендрить
   //через фильтр только те у которых совпадает название раздела
+  //Удали фавикон
 
   const onSectionClickedHandler = (i) => {
     SetisSectionClicked(true);
-    console.log(i);
+    SetSectionNAme(сatalogSections[i].name);
   };
 
   const SectoionsList = сatalogSections.map((item, i) => (
@@ -35,7 +38,14 @@ function Catalog() {
     />
   ));
 
-  return <div className={styles.Sections}>{SectoionsList}</div>;
+  return (
+    <Fragment>
+      <div className={styles.Sections}>{SectoionsList}</div>
+      <div className={styles.Sections}>
+        {<AllProducts selectedSection={SectionName} />}
+      </div>
+    </Fragment>
+  );
 }
 
 export default Catalog;
