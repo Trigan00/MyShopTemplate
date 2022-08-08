@@ -1,0 +1,86 @@
+[
+  {
+    "SectionName": "Кофты",
+    "name": "Белая кофта",
+    "price": 3000,
+    "id": 0,
+    "imgURL": "../img/white.png"
+  },
+  {
+    "SectionName": "Футболки",
+    "name": "Желтая футболка",
+    "price": 1200,
+    "id": 1,
+    "imgURL": "img/yellow.png"
+  },
+  {
+    "SectionName": "Штаны",
+    "name": "Черные штаны",
+    "price": 2500,
+    "id": 2,
+    "imgURL": "../img/black.png"
+  },
+  {
+    "SectionName": "Кроссовки",
+    "name": "Розовые кроссовки",
+    "price": 3000,
+    "id": 3,
+    "imgURL": "../img/pink.png"
+  },
+  {
+    "SectionName": "Кроссовки",
+    "name": "Черные кроссовки",
+    "price": 3100,
+    "id": 4,
+    "imgURL": "../img/black.png"
+  },
+  {
+    "SectionName": "Кроссовки",
+    "name": "Белые кроссовки",
+    "price": 3200,
+    "id": 5,
+    "imgURL": "../img/white.png"
+  },
+  {
+    "SectionName": "Кроссовки",
+    "name": "Розовые кроссовки",
+    "price": 3000,
+    "id": 6,
+    "imgURL": "../img/pink.png"
+  },
+  {
+    "SectionName": "Кроссовки",
+    "name": "Черные кроссовки",
+    "price": 3100,
+    "id": 7,
+    "imgURL": "../img/black.png"
+  },
+  {
+    "SectionName": "Кроссовки",
+    "name": "Белые кроссовки",
+    "price": 3200,
+    "id": 8,
+    "imgURL": "../img/white.png"
+  },
+  {
+    "SectionName": "Шорты",
+    "name": "Оранжевые шорты",
+    "price": 2000,
+    "id": 9,
+    "imgURL": "../img/orange.png"
+  },
+  {
+    "SectionName": "Куртки",
+    "name": "Синяя куртка",
+    "price": 5000,
+    "id": 10,
+    "imgURL": "../img/blue.png"
+  },
+  {
+    "SectionName": "Штаны",
+    "name": "Белые штаны",
+    "price": 3000,
+    "id": 11,
+    "imgURL": "../img/white.png"
+  }
+]
