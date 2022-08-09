@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./ProductItem.module.css";
+import styles from "./CatalogSection.module.css";
 
 function CatalogSection(props) {
   const onSectionCLickHandler = () => {
@@ -8,7 +8,12 @@ function CatalogSection(props) {
 
   return (
     <div className={styles.Item} onClick={onSectionCLickHandler}>
-      <div className={props.isClicked ? styles.imageClicked : styles.image} />
+      {!props.isClicked && (
+        <div className={styles.image}>
+          <img src="../img/pink.png" alt="MyPicture" />
+        </div>
+      )}
+
       <div className={styles.Name}>{props.product.name}</div>
     </div>
   );
