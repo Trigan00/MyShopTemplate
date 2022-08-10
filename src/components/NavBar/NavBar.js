@@ -1,36 +1,53 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { NavLink } from "react-router-dom";
 
 import "./NavBar.css";
 
 function NavBar() {
   return (
-    <nav className="mainNav">
+    <Fragment>
       <div className="CompanyName">
         <NavLink to={"/"}>Company Name</NavLink>
       </div>
-
-      <NavLink
-        to={"/Company"}
-        className={({ isActive }) => (isActive ? "link-active" : undefined)}
-      >
-        О компнии
-      </NavLink>
-
-      <NavLink
-        to={"/Catalog"}
-        className={({ isActive }) => (isActive ? "link-active" : undefined)}
-      >
-        Каталог
-      </NavLink>
-
-      <NavLink
-        to={"/Contacts"}
-        className={({ isActive }) => (isActive ? "link-active" : undefined)}
-      >
-        Контакты
-      </NavLink>
-    </nav>
+      <nav className="mainNav">
+        <NavLink
+          to={"/Hats"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+        >
+          Шапки
+        </NavLink>
+        <NavLink
+          to={"/Hoodies"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+        >
+          Худи
+        </NavLink>
+        <NavLink
+          to={"/Jackets"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+        >
+          Куртки
+        </NavLink>
+        <NavLink
+          to={"/Pants"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+        >
+          Штаны
+        </NavLink>
+        <NavLink
+          to={"/Sneakers"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+        >
+          Кроссовки
+        </NavLink>
+        <NavLink
+          to={"/T-Shirts"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+        >
+          Футболки
+        </NavLink>
+      </nav>
+    </Fragment>
   );
 }
 

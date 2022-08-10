@@ -1,28 +1,32 @@
 .mainNav {
-  height: 40px;
-  background: cornflowerblue;
-  font-size: 18px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
+  background-color: black;
+  padding: 20px 0;
 }
 
 .mainNav a {
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
-  height: 100%;
-  color: aliceblue;
+  color: white;
+  margin: 0 15px;
+  font-size: 18px;
 }
 
-.mainNav .CompanyName {
+.CompanyName {
+  text-align: center;
+  background-color: black;
+  padding-top: 20px;
+  border-bottom: 2px solid white;
+}
+
+.CompanyName a {
+  font-size: 28px;
   text-decoration: none;
-  margin-right: 100px;
+  color: aliceblue;
 }
 
 /* Specific styles for active links */
 .link-active {
-  background: orange;
+  border-bottom: 1px solid white;
 }

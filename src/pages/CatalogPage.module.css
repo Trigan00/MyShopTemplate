@@ -1,4 +1,10 @@
-.Sections {
+.SectionName {
+  text-align: center;
+  font-size: 28px;
+  margin: 25px 0;
+}
+
+.Wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

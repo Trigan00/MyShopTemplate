@@ -1,42 +1,29 @@
-import React, { Fragment, useState } from "react";
-import CatalogSection from "../components/catalogSection/CatalogSection";
-import AllProducts from "../components/Products/AllProducts";
+import { Fragment } from "react";
+import Product from "../components/Products/Product";
+import styles from "./CatalogPage.module.css";
 
-import styles from "./Catalog.module.css";
+// import allProductsJSON from "../../data/products.json";
 
 function CatalogPage(props) {
-  const [isSectionClicked, SetisSectionClicked] = useState(false);
-  const [SectionName, SetSectionNAme] = useState("");
-
-  const сatalogSections = [
-    { name: "Кофты", id: 0 },
-    { name: "Футболки", id: 1 },
-    { name: "Штаны", id: 2 },
-    { name: "Кроссовки", id: 3 },
-    { name: "Шорты", id: 4 },
-    { name: "Куртки", id: 5 },
-  ];
-
-  const onSectionClickedHandler = (i) => {
-    SetisSectionClicked(true);
-    SetSectionNAme(сatalogSections[i].name);
-  };
-
-  const SectoionsList = сatalogSections.map((item, i) => (
-    <CatalogSection
-      product={item}
-      key={item.id}
-      onSectionClicked={onSectionClickedHandler}
-      isClicked={isSectionClicked}
-      index={i}
-    />
-  ));
-
+  const newArr =
+    props.data &&
+    props.data.filter(
+      (product) => product.SectionName === props.selectedSection
+    );
   return (
     <Fragment>
-      <div className={styles.Sections}>{SectoionsList}</div>
-      <div className={styles.Sections}>
-        {<AllProducts selectedSection={SectionName} data={props.data} />}
+      <div className={styles.SectionName}>{props.selectedSection}</div>
+      <div className={styles.Wrapper}>
+        {newArr &&
+          newArr.map((product) => (
+            <Product
+              // name={product.name}
+              // price={product.price}
+              key={product.id}
+              imgurl={product.imgURL}
+              data={product}
+            />
+          ))}
       </div>
     </Fragment>
   );
