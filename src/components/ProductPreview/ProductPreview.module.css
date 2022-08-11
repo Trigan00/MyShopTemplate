@@ -1,20 +1,26 @@
 .BackGround {
   position: fixed;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 10;
   background: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.Body {
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  /* padding: 20px 15px; */
 }
 
 .Content {
   position: relative;
   z-index: 100;
-  width: 80%;
   background-color: aliceblue;
   border-radius: 10px;
   padding: 15px 0;
@@ -39,22 +45,24 @@
 .Wrapper {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .Image {
   /* padding: 15px; */
-  width: 400px;
-  height: 400px;
+  max-width: 400px;
+  max-height: 400px;
   padding: 0 15px;
 }
 
 .Image img {
+  object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
 .Description {
-  width: 400px;
+  max-width: 400px;
   font-size: 18px;
   padding: 0 15px;
 }
@@ -67,4 +75,10 @@
   padding: 8px 20px;
   border-radius: 20px;
   font-size: 24px;
+}
+
+@media screen and (max-width: 860px) {
+  .Body {
+    padding: 20px 15px;
+  }
 }

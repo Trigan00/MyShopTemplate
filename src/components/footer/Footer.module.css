@@ -1,0 +1,83 @@
+.Wrapper {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+.Left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Up {
+  display: flex;
+  align-items: center;
+}
+
+.CompanyName {
+  text-align: center;
+  font-size: 20px;
+}
+
+.Inst {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.FaceBook {
+  margin: 0 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Down {
+  font-size: 18px;
+  padding-top: 10px;
+  color: #bfbfbf;
+}
+
+.Right {
+  display: flex;
+}
+
+.Info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+  padding: 0 40px;
+}
+
+.emailPrefix {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #616060;
+}
+
+.emailcontent {
+  color: #bfbfbf;
+}
+
+.WorkingHoursPrefix {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #616060;
+}
+
+.WorkingHourscontent {
+  color: #bfbfbf;
+}
+
+.PaymentoptionsPrefix {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #616060;
+}

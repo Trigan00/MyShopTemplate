@@ -10,6 +10,7 @@ function CatalogPage(props) {
     props.data.filter(
       (product) => product.SectionName === props.selectedSection
     );
+
   return (
     <Fragment>
       <div className={styles.SectionName}>{props.selectedSection}</div>
