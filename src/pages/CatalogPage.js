@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import Product from "../components/Products/Product";
+import Loader from "../components/UI/Loader";
 import styles from "./CatalogPage.module.css";
 
 // import allProductsJSON from "../../data/products.json";
@@ -15,7 +16,7 @@ function CatalogPage(props) {
     <Fragment>
       <div className={styles.SectionName}>{props.selectedSection}</div>
       <div className={styles.Wrapper}>
-        {newArr &&
+        {newArr ? (
           newArr.map((product) => (
             <Product
               // name={product.name}
@@ -24,7 +25,21 @@ function CatalogPage(props) {
               imgurl={product.imgURL}
               data={product}
             />
-          ))}
+          ))
+        ) : (
+          <Loader />
+        )}
+
+        {/* // {newArr &&
+        //   newArr.map((product) => (
+        //     <Product
+        //       // name={product.name}
+        //       // price={product.price}
+        //       key={product.id}
+        //       imgurl={product.imgURL}
+        //       data={product}
+        //     />
+        //   ))} */}
       </div>
     </Fragment>
   );
