@@ -20,15 +20,23 @@ function Product(props) {
           <img src={props.imgurl} alt="PoductImage" />
         </div>
         <div className={styles.Description}>
-          <div className={styles.Name}>{props.data.name}</div>
-          <div className={styles.Price}>{props.data.price} &#8381;</div>
+          <div className={styles.Name}>{props.productData.name}</div>
+          <div className={styles.Price}>{props.productData.price} &#8381;</div>
         </div>
       </div>
+
+      {/* <div className={isPreviewOpen ? "" : styles.None}>
+        <ProductPreview
+          onClosePreview={closePreview}
+          data={props.productData}
+          imgurl={props.imgurl}
+        />
+      </div> */}
 
       {isPreviewOpen && (
         <ProductPreview
           onClosePreview={closePreview}
-          data={props.data}
+          productData={props.productData}
           imgurl={props.imgurl}
         />
       )}

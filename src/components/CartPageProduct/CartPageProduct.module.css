@@ -1,0 +1,81 @@
+.BackGround {
+  position: relative;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+
+.Description {
+  width: 400px;
+  display: flex;
+}
+
+.Image {
+  width: 170px;
+  height: 170px;
+}
+
+.Image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+}
+
+.Name {
+  font-size: 20px;
+  margin: 10px;
+}
+
+.CountAndPrice {
+  max-width: 250px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Counter {
+  padding: 5px 0;
+}
+
+.Price {
+  margin-top: 7px;
+  text-align: center;
+  font-size: 16px;
+  color: black;
+}
+
+.TotalPrice {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.Delete {
+  position: absolute;
+  border: 1px solid #000;
+  background-color: #ffffff;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  color: #000;
+  cursor: pointer;
+  top: -13px;
+  right: -13px;
+}
+
+@media screen and (max-width: 689px) {
+  .CountAndPrice {
+    max-width: 100%;
+  }
+}

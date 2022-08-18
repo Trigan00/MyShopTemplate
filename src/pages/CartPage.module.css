@@ -1,0 +1,66 @@
+.Wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 100%;
+  margin: 50px auto;
+  /* flex-wrap: wrap; */
+  /* padding: 15px; */
+}
+
+.Left {
+  max-width: 700px;
+  width: 100%;
+  margin: 0 10px;
+}
+
+.Right {
+  box-sizing: border-box;
+  width: 300px;
+  margin: 0 10px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  height: fit-content;
+}
+
+.Info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.GoToFormButton {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.GoToFormButton button {
+  width: 100%;
+  border: 2px solid #000;
+  padding: 15px 15px;
+  border-radius: 30px;
+  background-color: #fff;
+  font-size: 18px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.GoToFormButton button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@media screen and (max-width: 960px) {
+  .Wrapper {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .Right {
+    max-width: 700px;
+    width: 100%;
+  }
+}

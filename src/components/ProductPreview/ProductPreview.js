@@ -1,78 +1,58 @@
-import { useContext, useState } from "react";
-import Context from "../../context/context";
+import { useEffect, useState } from "react";
+// import Context from "../../context/context";
 import GoToCartBut from "../UI/GoToCartBut";
+import ProductCounter from "../UI/ProductCounter";
 import styles from "./ProductPreview.module.css";
 
 function ProductPreview(props) {
   const [inputAmount, SetInputAmount] = useState(1);
   const [AddToCartBut, SetAddToCartBut] = useState(false);
-  const ctx = useContext(Context);
+  // const ctx = useContext(Context);
 
-  const amountChangeHandler = (event) => {
-    if (+event.target.value <= 10 && +event.target.value >= 0)
-      SetInputAmount(event.target.value);
-  };
-
-  const stepDown = () => {
-    SetInputAmount((prev) => (prev > 1 ? prev - 1 : 1));
-  };
-
-  const stepUp = () => {
-    SetInputAmount((prev) => (prev < 10 ? prev + 1 : 10));
-  };
+  useEffect(() => {
+    const cartProductsList =
+      JSON.parse(localStorage.getItem("CartProducts")) || [];
+    cartProductsList.forEach((product) => {
+      if (product.id === props.productData.id) {
+        SetAddToCartBut(true);
+        return;
+      }
+    });
+  }, [props.productData.id]);
 
   const AddToCartHandler = () => {
-    ctx.push({
-      ItemName: props.data.name,
+    // ctx.push({
+    //   ItemName: props.productData.name,
+    //   ItemCount: inputAmount,
+    // });
+
+    const cartProductsList =
+      JSON.parse(localStorage.getItem("CartProducts")) || [];
+    cartProductsList.push({
+      id: props.productData.id,
+      ItemName: props.productData.name,
       ItemCount: inputAmount,
+      Price: props.productData.price,
+      ImgUrl: props.imgurl,
     });
+    localStorage.setItem("CartProducts", JSON.stringify(cartProductsList));
+
     SetAddToCartBut(true);
   };
-
-  const ButtonsLogic = AddToCartBut ? (
-    <GoToCartBut />
-  ) : (
-    <div className={styles.ProductCount}>
-      <div className={styles.Number}>
-        <button className={styles.NumberMinus} type="button" onClick={stepDown}>
-          -
-        </button>
-        <input
-          type="number"
-          min="1"
-          max="10"
-          step="1"
-          value={inputAmount}
-          onChange={amountChangeHandler}
-        ></input>
-        <button className={styles.NumberPlus} type="button" onClick={stepUp}>
-          +
-        </button>
-      </div>
-
-      <div className={styles.AddToCart}>
-        <button
-          className={styles.AddToCartBut}
-          type="button"
-          onClick={AddToCartHandler}
-        >
-          Добавить в корзину &#8594;
-        </button>
-      </div>
-    </div>
-  );
 
   return (
     <div className={styles.BackGround} onClick={props.onClosePreview}>
       <div className={styles.Body}>
         <div className={styles.Content} onClick={(e) => e.stopPropagation()}>
-          <div className={styles.Name}>{props.data.name}</div>
+          <div className={styles.Name}>{props.productData.name}</div>
           <div className={styles.Wrapper}>
             <div className={styles.Image}>
               <img src={props.imgurl} alt="PoductImage" />
             </div>
             <div className={styles.Description}>
-              <div className={styles.Price}>{props.data.price} &#8381;</div>
+              <div className={styles.Price}>
+                {props.productData.price} &#8381;
+              </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -85,7 +65,26 @@ function ProductPreview(props) {
                 turpis tincidunt id aliquet.
               </p>
 
-              {ButtonsLogic}
+              {AddToCartBut ? (
+                <GoToCartBut />
+              ) : (
+                <div className={styles.ProductCount}>
+                  <ProductCounter
+                    inputAmount={inputAmount}
+                    SetInputAmount={SetInputAmount}
+                  />
+
+                  <div className={styles.AddToCart}>
+                    <button
+                      className={styles.AddToCartBut}
+                      type="button"
+                      onClick={AddToCartHandler}
+                    >
+                      Добавить в корзину &#8594;
+                    </button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
           <div className={styles.Close} onClick={props.onClosePreview}>

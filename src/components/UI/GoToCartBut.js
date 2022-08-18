@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import styles from "./GoToCart.module.css";
 
 function GoToCartBut() {
   return (
     <NavLink to={"/Cart"}>
-      <button>В корзине</button>
+      <button className={styles.GoToCartBut}>В корзине</button>
     </NavLink>
   );
 }

@@ -23,7 +23,7 @@ function CatalogPage(props) {
               // price={product.price}
               key={product.id}
               imgurl={product.imgURL}
-              data={product}
+              productData={product}
             />
           ))
         ) : (

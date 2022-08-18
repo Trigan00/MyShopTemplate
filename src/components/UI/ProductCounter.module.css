@@ -1,0 +1,38 @@
+.Number {
+  /* background-color: aqua; */
+  display: flex;
+
+  /* padding: 2px; */
+}
+.Number input[type="number"] {
+  border: none;
+  text-align: center;
+  width: 30px;
+  height: 30px;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+  font-size: 20px;
+  padding: 5px 7px;
+}
+.Number input[type="number"]::-webkit-outer-spin-button,
+.Number input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+.NumberMinus {
+  border: none;
+  width: 45px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50% 0 0 50%;
+  font-size: 22px;
+  cursor: pointer;
+}
+.NumberPlus {
+  border: none;
+  width: 45px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 0 50% 50% 0;
+  font-size: 22px;
+  cursor: pointer;
+}
