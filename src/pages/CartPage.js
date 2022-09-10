@@ -1,7 +1,6 @@
-// import { useContext } from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import CartPageProduct from "../components/CartPageProduct/CartPageProduct";
-// import Context from "../context/context";
+import Context from "../context/context";
 
 import styles from "./CartPage.module.css";
 
@@ -11,25 +10,27 @@ function CartPage() {
   );
   const [totalPrice, SetTotalPrice] = useState(0);
   const [totalCount, SetTotalCount] = useState(0);
-  // const ctx = useContext(Context);
+  const ctx = useContext(Context);
 
-  const totalCountHandler = () => {
-    SetTotalCount(
-      JSON.parse(localStorage.getItem("CartProducts")).reduce(
-        (acc, el) => acc + el.ItemCount,
-        0
-      )
-    );
-  };
+  // const totalInfoHandler = () => {
+  //   SetTotalCount(
+  //     JSON.parse(localStorage.getItem("CartProducts")).reduce(
+  //       (acc, el) => acc + el.ItemCount,
+  //       0
+  //     )
+  //   );
+  //   SetTotalPrice(
+  //     JSON.parse(localStorage.getItem("CartProducts")).reduce(
+  //       (acc, el) => acc + el.ItemCount * el.Price,
+  //       0
+  //     )
+  //   );
 
-  const totalPriceHandler = () => {
-    SetTotalPrice(
-      JSON.parse(localStorage.getItem("CartProducts")).reduce(
-        (acc, el) => acc + el.ItemCount * el.Price,
-        0
-      )
-    );
-  };
+  //   ctx.inCartTotalCount = totalCount;
+  //   ctx.inCartTotalPrice = totalPrice;
+  //   console.log(ctx);
+  //   ctx.SetInCartProducts(cartProductsList);
+  // };
 
   const deleteHandler = (id) => {
     const newArr = cartProductsList.filter((product) => product.id !== id);
@@ -39,6 +40,7 @@ function CartPage() {
       SetTotalPrice(0);
       SetTotalCount(0);
     }
+    ctx.SetInCartProducts(newArr);
   };
 
   return (
@@ -55,16 +57,24 @@ function CartPage() {
                 Price={value.Price}
                 ImgUrl={value.ImgUrl}
                 onDelete={deleteHandler}
-                onTotalCountHandler={totalCountHandler}
-                onTotalPriceHandler={totalPriceHandler}
+                // ontotalInfoHandler={totalInfoHandler}
               />
             );
           })}
       </div>
       <div className={styles.Right}>
         <div className={styles.Info}>
-          <div className={styles.ProductsCount}>{totalCount} товаров</div>
-          <div className={styles.TotalPrice}>{totalPrice} &#8381;</div>
+          <div className={styles.ProductsCount}>
+            Кол-во товара :{" "}
+            {ctx.inCartProducts.reduce((acc, el) => acc + el.ItemCount, 0)}
+          </div>
+          <div className={styles.TotalPrice}>
+            {ctx.inCartProducts.reduce(
+              (acc, el) => acc + el.ItemCount * el.Price,
+              0
+            )}{" "}
+            &#8381;
+          </div>
         </div>
         <div className={styles.GoToFormButton}>
           <button>Перейти к оформлению</button>

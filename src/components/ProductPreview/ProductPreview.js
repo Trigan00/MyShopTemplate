@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-// import Context from "../../context/context";
+import { useEffect, useState, useContext } from "react";
+import Context from "../../context/context";
 import GoToCartBut from "../UI/GoToCartBut";
 import ProductCounter from "../UI/ProductCounter";
 import styles from "./ProductPreview.module.css";
@@ -7,7 +7,7 @@ import styles from "./ProductPreview.module.css";
 function ProductPreview(props) {
   const [inputAmount, SetInputAmount] = useState(1);
   const [AddToCartBut, SetAddToCartBut] = useState(false);
-  // const ctx = useContext(Context);
+  const ctx = useContext(Context);
 
   useEffect(() => {
     const cartProductsList =
@@ -21,11 +21,6 @@ function ProductPreview(props) {
   }, [props.productData.id]);
 
   const AddToCartHandler = () => {
-    // ctx.push({
-    //   ItemName: props.productData.name,
-    //   ItemCount: inputAmount,
-    // });
-
     const cartProductsList =
       JSON.parse(localStorage.getItem("CartProducts")) || [];
     cartProductsList.push({
@@ -37,6 +32,16 @@ function ProductPreview(props) {
     });
     localStorage.setItem("CartProducts", JSON.stringify(cartProductsList));
 
+    // ctx.inCartTotalCount = cartProductsList.reduce(
+    //   (acc, el) => acc + el.ItemCount,
+    //   0
+    // );
+    // ctx.inCartTotalPrice = cartProductsList.reduce(
+    //   (acc, el) => acc + el.ItemCount * el.Price,
+    //   0
+    // );
+
+    ctx.SetInCartProducts(cartProductsList);
     SetAddToCartBut(true);
   };
 
@@ -72,6 +77,7 @@ function ProductPreview(props) {
                   <ProductCounter
                     inputAmount={inputAmount}
                     SetInputAmount={SetInputAmount}
+                    isProductPreview={true}
                   />
 
                   <div className={styles.AddToCart}>
