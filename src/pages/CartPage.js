@@ -1,53 +1,22 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import CartPageProduct from "../components/CartPageProduct/CartPageProduct";
-import Context from "../context/context";
+import Context from "../store/context";
 
 import styles from "./CartPage.module.css";
 
 function CartPage() {
-  const [cartProductsList, SetCartProductsList] = useState(
-    JSON.parse(localStorage.getItem("CartProducts"))
-  );
-  const [totalPrice, SetTotalPrice] = useState(0);
-  const [totalCount, SetTotalCount] = useState(0);
   const ctx = useContext(Context);
-
-  // const totalInfoHandler = () => {
-  //   SetTotalCount(
-  //     JSON.parse(localStorage.getItem("CartProducts")).reduce(
-  //       (acc, el) => acc + el.ItemCount,
-  //       0
-  //     )
-  //   );
-  //   SetTotalPrice(
-  //     JSON.parse(localStorage.getItem("CartProducts")).reduce(
-  //       (acc, el) => acc + el.ItemCount * el.Price,
-  //       0
-  //     )
-  //   );
-
-  //   ctx.inCartTotalCount = totalCount;
-  //   ctx.inCartTotalPrice = totalPrice;
-  //   console.log(ctx);
-  //   ctx.SetInCartProducts(cartProductsList);
-  // };
-
   const deleteHandler = (id) => {
-    const newArr = cartProductsList.filter((product) => product.id !== id);
+    const newArr = ctx.inCartProducts.filter((product) => product.id !== id);
     localStorage.setItem("CartProducts", JSON.stringify(newArr));
-    SetCartProductsList(JSON.parse(localStorage.getItem("CartProducts")));
-    if (newArr.length === 0) {
-      SetTotalPrice(0);
-      SetTotalCount(0);
-    }
     ctx.SetInCartProducts(newArr);
   };
 
   return (
     <div className={styles.Wrapper}>
       <div className={styles.Left}>
-        {cartProductsList &&
-          cartProductsList.map((value) => {
+        {ctx.inCartProducts &&
+          ctx.inCartProducts.map((value) => {
             return (
               <CartPageProduct
                 key={value.id}
@@ -57,7 +26,6 @@ function CartPage() {
                 Price={value.Price}
                 ImgUrl={value.ImgUrl}
                 onDelete={deleteHandler}
-                // ontotalInfoHandler={totalInfoHandler}
               />
             );
           })}

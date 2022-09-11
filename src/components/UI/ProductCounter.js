@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import Context from "../../context/context";
+import Context from "../../store/context";
 import styles from "./ProductCounter.module.css";
 
 const ProductCounter = (props) => {
@@ -26,7 +26,7 @@ const ProductCounter = (props) => {
         (item) => item.id === props.id
       );
       if (ctx.inCartProducts[itemIndex].ItemCount > 1)
-        ctx.decreaseProductHandler(props.id);
+        ctx.changeProductCount(props.id, -1);
     }
   };
 
@@ -37,7 +37,7 @@ const ProductCounter = (props) => {
         (item) => item.id === props.id
       );
       if (ctx.inCartProducts[itemIndex].ItemCount < 10)
-        ctx.increaseProductHandler(props.id);
+        ctx.changeProductCount(props.id, 1);
     }
   };
 

@@ -8,46 +8,10 @@ import NavBar from "./components/NavBar/NavBar";
 import Footer from "./components/footer/Footer";
 
 import styles from "./App.module.css";
-import Context from "./context/context";
+import ContextProvider from "./store/ContextProvider";
 
 function App() {
   const [data, SetData] = useState(null);
-  const [inCartProducts, SetInCartProducts] = useState(
-    JSON.parse(localStorage.getItem("CartProducts"))
-  );
-
-  const increaseProductHandler = (id) => {
-    const cartProductsList = JSON.parse(localStorage.getItem("CartProducts"));
-    const newarr = [...cartProductsList];
-
-    const cartItemIndex = newarr.findIndex((item) => item.id === id);
-    newarr.splice(cartItemIndex, 1, {
-      ...cartProductsList[cartItemIndex],
-      ItemCount: cartProductsList[cartItemIndex].ItemCount + 1,
-    });
-    localStorage.setItem("CartProducts", JSON.stringify(newarr));
-    SetInCartProducts(newarr);
-  };
-
-  const decreaseProductHandler = (id) => {
-    const cartProductsList = JSON.parse(localStorage.getItem("CartProducts"));
-    const newarr = [...cartProductsList];
-
-    const cartItemIndex = newarr.findIndex((item) => item.id === id);
-    newarr.splice(cartItemIndex, 1, {
-      ...cartProductsList[cartItemIndex],
-      ItemCount: cartProductsList[cartItemIndex].ItemCount - 1,
-    });
-    localStorage.setItem("CartProducts", JSON.stringify(newarr));
-    SetInCartProducts(newarr);
-  };
-
-  // const value = {
-  //   inCartProducts: inCartProducts,
-  //   SetInCartProducts: SetInCartProducts,
-  //   addProduct: addProductHandler,
-  //   delProduct: delProductHandler,
-  // };
 
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem("CartProducts"));
@@ -63,14 +27,7 @@ function App() {
   }, []);
 
   return (
-    <Context.Provider
-      value={{
-        inCartProducts: inCartProducts,
-        SetInCartProducts: SetInCartProducts,
-        increaseProductHandler: increaseProductHandler,
-        decreaseProductHandler: decreaseProductHandler,
-      }}
-    >
+    <ContextProvider>
       <BrowserRouter>
         <main className={styles.Main}>
           <NavBar />
@@ -105,7 +62,7 @@ function App() {
         </main>
         <Footer></Footer>
       </BrowserRouter>
-    </Context.Provider>
+    </ContextProvider>
   );
 }
 

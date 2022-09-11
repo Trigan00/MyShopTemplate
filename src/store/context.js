@@ -3,8 +3,7 @@ import React from "react";
 const Context = React.createContext({
   inCartProducts: [],
   SetInCartProducts: () => {},
-  increaseProductHandler: () => {},
-  decreaseProductHandler: () => {},
+  changeProductCount: () => {},
 });
 
 export default Context;
