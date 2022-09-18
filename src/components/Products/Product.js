@@ -21,7 +21,7 @@ function Product(props) {
         </div>
         <div className={styles.Description}>
           <div className={styles.Name}>{props.productData.name}</div>
-          <div className={styles.Price}>{props.productData.price} &#8381;</div>
+          <div className={styles.Price}>{props.productData.price} &#36;</div>
         </div>
       </div>
 

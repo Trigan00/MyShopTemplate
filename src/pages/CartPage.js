@@ -41,11 +41,11 @@ function CartPage() {
               (acc, el) => acc + el.ItemCount * el.Price,
               0
             )}{" "}
-            &#8381;
+            &#36;
           </div>
         </div>
         <div className={styles.GoToFormButton}>
-          <button>Перейти к оформлению</button>
+          <button>Checkout</button>
         </div>
       </div>
     </div>

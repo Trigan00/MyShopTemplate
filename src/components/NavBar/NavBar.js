@@ -16,40 +16,34 @@ function NavBar() {
 
       <nav className="mainNav">
         <NavLink
-          to={"/Hats"}
+          to={"/Modular_paintings"}
           className={({ isActive }) => (isActive ? "link-active" : undefined)}
         >
-          Шапки
+          Modular paintings
         </NavLink>
         <NavLink
-          to={"/Hoodies"}
+          to={"/Framed_paintings"}
           className={({ isActive }) => (isActive ? "link-active" : undefined)}
         >
-          Худи
+          Framed paintings
         </NavLink>
         <NavLink
-          to={"/Jackets"}
+          to={"/Posters"}
           className={({ isActive }) => (isActive ? "link-active" : undefined)}
         >
-          Куртки
+          Posters
         </NavLink>
         <NavLink
-          to={"/Pants"}
+          to={"/Clock-paintings"}
           className={({ isActive }) => (isActive ? "link-active" : undefined)}
         >
-          Штаны
+          Clock-paintings
         </NavLink>
         <NavLink
-          to={"/Sneakers"}
+          to={"/Lightboxes"}
           className={({ isActive }) => (isActive ? "link-active" : undefined)}
         >
-          Кроссовки
-        </NavLink>
-        <NavLink
-          to={"/T-Shirts"}
-          className={({ isActive }) => (isActive ? "link-active" : undefined)}
-        >
-          Футболки
+          Lightboxes
         </NavLink>
         <NavLink
           to={"/Cart"}
@@ -72,7 +66,7 @@ function NavBar() {
                   )
                 : 0}{" "}
             </span>
-            &#8381;
+            &#36;
           </div>
         </NavLink>
       </nav>

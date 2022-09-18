@@ -30,9 +30,9 @@ function CartPageProduct(props) {
             isProductPreview={false}
             id={props.id}
           />
-          <div className={styles.Price}>{props.Price} &#8381;/шт.</div>
+          <div className={styles.Price}>{props.Price} &#36;/pcs.</div>
         </div>
-        <div className={styles.TotalPrice}>{totalPrice} &#8381;</div>
+        <div className={styles.TotalPrice}>{totalPrice} &#36;</div>
       </div>
 
       <div className={styles.Delete} onClick={() => props.onDelete(props.id)}>

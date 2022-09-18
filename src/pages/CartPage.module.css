@@ -33,10 +33,6 @@
   font-weight: bold;
 }
 
-.ProductsCount {
-  /* margin-right: 15px; */
-}
-
 .GoToFormButton {
   width: 100%;
   margin-top: 20px;
@@ -51,6 +47,7 @@
   font-size: 18px;
   transition: 0.4s;
   cursor: pointer;
+  text-transform: uppercase;
 }
 
 .GoToFormButton button:hover {

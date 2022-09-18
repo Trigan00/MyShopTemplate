@@ -1,0 +1,48 @@
+.CarouselContainer {
+  height: 100%;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.window {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.allPagesContainer {
+  height: 100%;
+  display: flex;
+  transition: 0.4s;
+}
+
+.OwlDots {
+  display: flex;
+  justify-content: center;
+}
+
+.OwlDot {
+  width: 15px;
+  height: 15px;
+  background-color: #d6d6d6;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+.Active {
+  background-color: #869791;
+}
+
+/* @media (max-width: 700px) {
+  .mainContainer {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  .mainContainer {
+    height: 200px;
+  }
+} */

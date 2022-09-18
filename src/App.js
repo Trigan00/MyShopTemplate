@@ -16,12 +16,14 @@ function App() {
   useEffect(() => {
     const info = JSON.parse(localStorage.getItem("CartProducts"));
     if (!info) localStorage.setItem("CartProducts", JSON.stringify([]));
+
     fetch("https://trigan00.github.io/jsonapi/products.json")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
         SetData(data);
+        console.log(data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -34,28 +36,30 @@ function App() {
           <Routes>
             <Route path={"/*"} element={<HomePage />} />
             <Route
-              path={"Hats/"}
-              element={<CatalogPage data={data} selectedSection="Шапки" />}
+              path={"Modular_paintings/"}
+              element={
+                <CatalogPage data={data} selectedSection="Modular paintings" />
+              }
             />
             <Route
-              path={"Hoodies/"}
-              element={<CatalogPage data={data} selectedSection="Худи" />}
+              path={"Framed_paintings/"}
+              element={
+                <CatalogPage data={data} selectedSection="Framed paintings" />
+              }
             />
             <Route
-              path={"Jackets/"}
-              element={<CatalogPage data={data} selectedSection="Куртки" />}
+              path={"Posters/"}
+              element={<CatalogPage data={data} selectedSection="Posters" />}
             />
             <Route
-              path={"Pants/"}
-              element={<CatalogPage data={data} selectedSection="Штаны" />}
+              path={"Clock-paintings/"}
+              element={
+                <CatalogPage data={data} selectedSection="Clock-paintings" />
+              }
             />
             <Route
-              path={"Sneakers/"}
-              element={<CatalogPage data={data} selectedSection="Кроссовки" />}
-            />
-            <Route
-              path={"T-Shirts/"}
-              element={<CatalogPage data={data} selectedSection="Футболки" />}
+              path={"Lightboxes/"}
+              element={<CatalogPage data={data} selectedSection="Lightboxes" />}
             />
             <Route path={"Cart/"} element={<CartPage />} />
           </Routes>

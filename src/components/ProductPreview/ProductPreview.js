@@ -47,7 +47,7 @@ function ProductPreview(props) {
             </div>
             <div className={styles.Description}>
               <div className={styles.Price}>
-                {props.productData.price} &#8381;
+                {props.productData.price} &#36;
               </div>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -77,7 +77,7 @@ function ProductPreview(props) {
                       type="button"
                       onClick={AddToCartHandler}
                     >
-                      Добавить в корзину &#8594;
+                      Add to Cart &#8594;
                     </button>
                   </div>
                 </div>
