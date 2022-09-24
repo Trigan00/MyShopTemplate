@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import CartPageProduct from "../components/CartPageProduct/CartPageProduct";
 import Context from "../store/context";
 
@@ -33,7 +34,7 @@ function CartPage() {
       <div className={styles.Right}>
         <div className={styles.Info}>
           <div className={styles.ProductsCount}>
-            Кол-во товара :{" "}
+            QTY :{" "}
             {ctx.inCartProducts.reduce((acc, el) => acc + el.ItemCount, 0)}
           </div>
           <div className={styles.TotalPrice}>
@@ -45,7 +46,9 @@ function CartPage() {
           </div>
         </div>
         <div className={styles.GoToFormButton}>
-          <button>Checkout</button>
+          <NavLink to={"/Checkout"}>
+            <button>Checkout</button>
+          </NavLink>
         </div>
       </div>
     </div>

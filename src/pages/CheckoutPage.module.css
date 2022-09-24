@@ -1,0 +1,156 @@
+.mainTitle {
+  text-align: center;
+  font-size: 28px;
+  margin: 25px 0;
+  font-weight: bold;
+}
+
+.wrapper {
+  max-width: 900px;
+  width: 100%;
+  margin: 30px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 20px;
+  line-height: 10px;
+  color: black;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+form div {
+  margin-top: 10px;
+  width: 500px;
+}
+
+form input {
+  display: block;
+  width: 100%;
+  min-height: 25px;
+  border: 0;
+  font-size: 1rem;
+  margin-top: 5px;
+  border-radius: 15px;
+  outline: none;
+  color: black;
+  font-weight: bold;
+  padding: 4px 10px;
+}
+
+form label {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: black;
+}
+
+form h1 {
+  font-size: 20px;
+  line-height: 10px;
+  color: black;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.PaymentInfo {
+  margin-top: 40px;
+}
+
+.btn button {
+  margin-top: 20px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 15px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  word-spacing: 4px;
+  transition: 0.4s;
+}
+
+.btn button:hover {
+  background-color: #373737;
+}
+
+.OrderList {
+  background-color: white;
+  border-radius: 20px;
+  width: 300px;
+}
+
+.Product {
+  padding: 15px 30px;
+}
+
+.ProductInfo,
+.ProductsInfo {
+  margin: 10px 0;
+}
+
+.ProductTitle,
+.ProductsInfo {
+  font-size: 16px;
+}
+
+.ProductName {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.ProductTitle span,
+.ProductsInfoTitle span {
+  font-weight: bold;
+  font-size: 16px;
+  word-spacing: 3px;
+  margin-left: 5px;
+}
+
+.OrderItemWrapper hr {
+  border: none;
+  border-top: 1px solid #e2e2e2;
+  margin: 0;
+}
+
+.ProductsTotalInfo {
+  padding: 15px 30px;
+}
+
+.TotalCost {
+  text-align: center;
+  padding: 25px;
+}
+
+.TotalCostTitle span {
+  font-weight: bold;
+  font-size: 22px;
+  margin-left: 7px;
+}
+
+.TotalCostHr {
+  border: none;
+  border-top: 2px solid #e2e2e2;
+  margin: 0;
+}
+
+@media (max-width: 1020px) {
+  .wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  form div {
+    width: 90vw;
+  }
+
+  .DevileryDetails {
+    margin-top: 50px;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+  }
+}

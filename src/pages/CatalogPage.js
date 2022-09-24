@@ -14,7 +14,7 @@ function CatalogPage(props) {
 
   return (
     <Fragment>
-      <div className={styles.SectionName}>{props.selectedSection}</div>
+      <h1 className={styles.SectionName}>{props.selectedSection}</h1>
       <div className={styles.Wrapper}>
         {newArr ? (
           newArr.map((product) => (

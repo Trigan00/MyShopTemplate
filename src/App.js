@@ -9,6 +9,7 @@ import Footer from "./components/footer/Footer";
 
 import styles from "./App.module.css";
 import ContextProvider from "./store/ContextProvider";
+import CheckoutPage from "./pages/CheckoutPage";
 
 function App() {
   const [data, SetData] = useState(null);
@@ -23,7 +24,7 @@ function App() {
       })
       .then((data) => {
         SetData(data);
-        console.log(data);
+        // console.log(data);
       })
       .catch((err) => console.log(err));
   }, []);
@@ -62,6 +63,7 @@ function App() {
               element={<CatalogPage data={data} selectedSection="Lightboxes" />}
             />
             <Route path={"Cart/"} element={<CartPage />} />
+            <Route path={"Checkout/"} element={<CheckoutPage />} />
           </Routes>
         </main>
         <Footer></Footer>
