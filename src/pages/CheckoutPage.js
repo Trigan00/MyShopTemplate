@@ -9,12 +9,18 @@ function CheckoutPage() {
     0
   );
 
+  const submitHandler = (event) => {
+    event.preventDefault();
+    ctx.SetInCartProducts([]);
+    localStorage.setItem("CartProducts", JSON.stringify([]));
+  };
+
   return (
     <React.Fragment>
       <div className={styles.mainTitle}>Checkout</div>
       <div className={styles.wrapper}>
         <div className={styles.container}>
-          <form action="">
+          <form onSubmit={submitHandler}>
             <h1 className={`${styles.title} ${styles.DevileryDetails}`}>
               Enter delivery details
             </h1>
@@ -61,7 +67,7 @@ function CheckoutPage() {
               </div>
             </div>
             <div className={styles.btn}>
-              <button>confirm the order </button>
+              <button type="submit">confirm the order </button>
             </div>
           </form>
         </div>

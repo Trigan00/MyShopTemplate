@@ -3,7 +3,7 @@ import Context from "./context";
 
 function ContextProvider(props) {
   const [inCartProducts, SetInCartProducts] = useState(
-    JSON.parse(localStorage.getItem("CartProducts"))
+    JSON.parse(localStorage.getItem("CartProducts")) || []
   );
 
   const changeProductCountHandler = (id, sign) => {
