@@ -1,15 +1,9 @@
-.mainNav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.Wrapper {
   background-color: #1a1c29;
-  padding: 20px 0;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .CompanyName {
   text-align: center;
-  background-color: #1a1c29;
   padding-top: 20px;
 }
 
@@ -25,6 +19,13 @@
   font-size: 28px;
   text-decoration: none;
   color: #fff;
+}
+
+.mainNav {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .mainNav a {
@@ -116,36 +117,51 @@
   display: none;
 }
 
+.NavBackGround {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  transition: 0.4s;
+}
+
 @media (max-width: 1020px) {
+  .Wrapper {
+    width: 100%;
+    position: relative;
+  }
   .menuIcon {
     display: block;
   }
 
-  .topNav {
+  .mainNav {
+    background-color: #1a1c29;
+    display: block;
     position: absolute;
     left: 0;
-    right: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0;
+    transform: translateY(100%);
+    max-height: 0;
     overflow: hidden;
-    z-index: 10;
-  }
-
-  .mainNav {
-    margin-left: 0px;
-    transform: translateY(-100%);
-    transition: all 0.4s;
-  }
-
-  .mainNav {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .mainNav.change {
-    transform: translateY(0);
+    z-index: 20;
+    transition: 0.4s;
   }
 
   .mainNav a {
+    display: block;
     padding: 10px;
+  }
+
+  .mainNav.change {
+    max-height: 300px;
+    padding: 20px 0;
+  }
+
+  .NavBackGround.change {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 19;
   }
 
   .mainNav a:hover::before {

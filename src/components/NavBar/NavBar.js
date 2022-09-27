@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useState } from "react";
+import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Context from "../../store/context";
 
@@ -42,7 +42,7 @@ function NavBar() {
   );
 
   return (
-    <Fragment>
+    <div className="Wrapper">
       <div className="CompanyName">
         <NavLink to={"/"}>Company Name</NavLink>
         <div className="NameContainer">
@@ -60,47 +60,51 @@ function NavBar() {
         <div className="hr" />
       </div>
 
-      <div className={"topNav"}>
-        <nav className={`mainNav ${changeClassName}`}>
-          <NavLink
-            to={"/Modular_paintings"}
-            className={({ isActive }) => (isActive ? "link-active" : undefined)}
-            onClick={OpenOrCloseMenu}
-          >
-            Modular paintings
-          </NavLink>
-          <NavLink
-            to={"/Framed_paintings"}
-            className={({ isActive }) => (isActive ? "link-active" : undefined)}
-            onClick={OpenOrCloseMenu}
-          >
-            Framed paintings
-          </NavLink>
-          <NavLink
-            to={"/Posters"}
-            className={({ isActive }) => (isActive ? "link-active" : undefined)}
-            onClick={OpenOrCloseMenu}
-          >
-            Posters
-          </NavLink>
-          <NavLink
-            to={"/Clock-paintings"}
-            className={({ isActive }) => (isActive ? "link-active" : undefined)}
-            onClick={OpenOrCloseMenu}
-          >
-            Clock-paintings
-          </NavLink>
-          <NavLink
-            to={"/Lightboxes"}
-            className={({ isActive }) => (isActive ? "link-active" : undefined)}
-            onClick={OpenOrCloseMenu}
-          >
-            Lightboxes
-          </NavLink>
-          {Cart}
-        </nav>
-      </div>
-    </Fragment>
+      {/* <div className={"topNav"}> */}
+      <nav className={`mainNav ${changeClassName}`}>
+        <NavLink
+          to={"/Modular_paintings"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+          onClick={OpenOrCloseMenu}
+        >
+          Modular paintings
+        </NavLink>
+        <NavLink
+          to={"/Framed_paintings"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+          onClick={OpenOrCloseMenu}
+        >
+          Framed paintings
+        </NavLink>
+        <NavLink
+          to={"/Posters"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+          onClick={OpenOrCloseMenu}
+        >
+          Posters
+        </NavLink>
+        <NavLink
+          to={"/Clock-paintings"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+          onClick={OpenOrCloseMenu}
+        >
+          Clock-paintings
+        </NavLink>
+        <NavLink
+          to={"/Lightboxes"}
+          className={({ isActive }) => (isActive ? "link-active" : undefined)}
+          onClick={OpenOrCloseMenu}
+        >
+          Lightboxes
+        </NavLink>
+        {Cart}
+      </nav>
+      <div
+        className={`NavBackGround ${changeClassName}`}
+        onClick={OpenOrCloseMenu}
+      />
+      {/* </div> */}
+    </div>
   );
 }
 
