@@ -1,7 +1,7 @@
 # MyShopTemplate
 
 This is an example of a picture store.
-Demo - http://myshops.mcdir.ru/
+Demo - https://my-shop-topaz.vercel.app/Framed_paintings
 
 P.s this is not a real picture store.
 
